@@ -4,16 +4,13 @@ package hiber.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Car")
 public class Car {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int primaryKey;
-    @Column(name = "model")
+    private int Id;
     private String model;
-    @Column(name = "series")
+
     private int series;
     @OneToOne(mappedBy = "car", cascade = CascadeType.ALL)
     private User user;
@@ -29,7 +26,7 @@ public class Car {
 
 
     public int getPrimaryKey() {
-        return primaryKey;
+        return Id;
     }
 
     public String getModel() {
@@ -54,5 +51,15 @@ public class Car {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "primaryKey=" + Id +
+                ", model='" + model + '\'' +
+                ", series=" + series +
+                ", user=" + user +
+                '}';
     }
 }
