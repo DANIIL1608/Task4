@@ -8,7 +8,7 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
+    private int id;
     private String model;
 
     private int series;
@@ -26,7 +26,7 @@ public class Car {
 
 
     public int getPrimaryKey() {
-        return Id;
+        return id;
     }
 
     public String getModel() {
@@ -56,7 +56,7 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "primaryKey=" + Id +
+                "primaryKey=" + id +
                 ", model='" + model + '\'' +
                 ", series=" + series +
                 ", user=" + user +
